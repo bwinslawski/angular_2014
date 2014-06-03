@@ -1,11 +1,14 @@
-<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE HTML>
+<html ng-app>
   <head>
     <title>Simple Chat</title>
     <link rel="stylesheet",type="text/css" href="styles.css"/>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!--<script src="angular.min.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="MojScript.js"></script>
+	
     <script type="text/javascript" src="chat.js"></script>
 	<script>
 	
@@ -13,12 +16,24 @@
   </head>
   <body>
 	<div id="demo">siemanko</div>
-    <div id="wrapper">
-      <h1>Simple Chat</h1>
-      <div id="messages"></div>
-      <textarea id="message"></textarea>
-      <input id="send" type="submit" value="Send"/>
-    </div>
+	<div  id="tabelka">
+	   <div ng-app="APP" ng-controller="APP.ApplicationCtrl">
+			<table>
+				<tr>
+					<th>title</th><th>mileage</th> <th>price</th><th>url</th><th>akcja</th>
+				</tr>
+				<tr id="2" ng-repeat="item in cities">
+					<td>{{item.title}}</td>
+					<td>{{item.mileage}}</td>
+					<td>{{item.price}}</td>
+					<td>{{item.imgData}}</td>
+					<td><button type="button"onclick="edit("{{item.id}}")>Edytuj</button>
+					<button type="button"onclick="remove("{{item.id}}")>Usuń</button>
+					<button type="button"onclick="show("{{item.id}}")>Szczegóły</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
     <script type="text/javascript">
       $(document).ready(function() {
         Chat.initialize('http://localhost/');

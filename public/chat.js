@@ -1,16 +1,21 @@
+﻿var dane = 0;
+
 //Create a chat module to use.
 (function () {
 
-var dane = 0 ;
+
 
 	function dodajTablice(data)
 	{
 	var elo = ""; 
 	console.log("Jestem tu: " + data);
-		elo =elo+ "<table>";
+		elo =elo+ "<table id=\"tabelka\"><tr> <th>title</th><th>price</th> <th>year</th><th>url</th><th>akcja</th></tr>";
 		$.each( dane, function( key, val ) 
 		{
-				elo =elo +  "<tr><td>"+ val["title"] + "<tr><td>";
+				elo = elo +  "<tr><td>"+ val["title"] + "</td><td>" +val["price"]+"</td><td>" +val["year"]+"</td><td>" +val["imgData"]
+				+"</td><td><button type=\"button\"onclick=\"remove("+ val["id"] +")\">Usuń</button>"
+				+"<button type=\"button\"onclick=\"edit("+ val["id"] +")\">Edytuj</button>"
+				+"<button type=\"button\"onclick=\"show("+ val["id"] +")\">Szczegóły</button></td></tr>";
 		});	
 		elo = elo + "</table>";
 		document.getElementById("demo").innerHTML = elo;
@@ -35,9 +40,11 @@ var dane = 0 ;
 			dane = data;
 			dodajTablice(dane);
 			});
-			console.log("Questions" + dane);
+			
+			//dodajTablice(dane);
 		}
-		//dodajTablice(dane);
+		console.log("Questions" + dane);
+		
 	}
 
   window.Chat = {

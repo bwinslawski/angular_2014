@@ -1,6 +1,10 @@
 body {
   background-color : #6B6B6B;
-  color: #D9D4C7;
+  color: #fff;
+  margin : 0 auto;
+}
+*{
+ margin : 0 auto;
 }
 
 #wrapper {
@@ -23,7 +27,16 @@ h1 {
   line-height : 1em;
   filter: dropshadow(color=#6B6B6B, offx=1, offy=1);
 }
-
+#tabelka{
+text-align:center;
+background-color: gray;
+}
+table,th,td
+{
+background-color: gray;
+border:1px solid black;
+border-collapse:collapse;
+}
 #messages {
   overflow : auto;
   height : 300px;
