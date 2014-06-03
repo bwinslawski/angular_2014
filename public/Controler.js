@@ -6,7 +6,8 @@ APP.ApplicationCtrl = function ($scope) {
 					});
 				})
 				$scope.predicate = '-price';
+	
+  
 };
 
 
-// http://mrzepinski.pl/angularjs-5-ng-repeat.html  <- filtry

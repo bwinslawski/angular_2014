@@ -2,13 +2,18 @@
 <html ng-app>
   <head>
     <title>Filmy</title>
-    <link rel="stylesheet",type="text/css" href="styles.css"/>
+	<link rel="stylesheet",type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet",type="text/css" href="css/styles.css"/>
+	
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<!--<script src="angular.min.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	<script src="Controler.js"></script>
 	<script>
+	function editV(elo){
+	console.log(elo);
+	}
 	
 	</script>
     <script type="text/javascript" src="chat.js"></script>
@@ -17,13 +22,12 @@
 </script>
   </head>
   <body>
-	<div id="demo">siemanko</div>
+	<div id="demo"></div>
 	<div  id="tabelka">
 			<div ng-app="APP" ng-controller="APP.ApplicationCtrl">
-			  <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
-			  <hr/>
+			  
 			  [ <a href="" ng-click="predicate=''">unsorted</a> ]
-			  <table class="friend">
+			  <table class="lol">
 				<tr>
 					<th><a href="" ng-click="predicate = 'title'; reverse=false">title</a>
 						  (<a href="" ng-click="predicate = '-title'; reverse=false">^</a>)</th>
@@ -32,16 +36,23 @@
 					<th>Url</th>
 					<th>Akcja</th>
 				</tr>
-				<tr ng-repeat="friend in friends | orderBy:predicate:reverse">
+				<tr ng-repeat="friend in friends | orderBy:predicate:reverse  | filter:filterQuery">
 					<td>{{friend.title}}</td>
 					<td>{{friend.mileage}}</td>
 					<td>{{friend.price}}</td>
-					<td>{{item.imgData}}</td>
 					<td>
-						<button type="button"onclick="edit("{{item.id}}")">Edytuj</button>
-						<button type="button"onclick="remove("{{item.id}}")">Usuń</button>
-						<button type="button"onclick="show("{{item.id}}")">Szczegóły</button>
+					 <embed
+						  width="240" height="200"
+						  ng-src="{{friend.imgData}}"
+						  type="application/x-shockwave-flash">
+					 </embed>
 					</td>
+					<td>
+						<button role='button' class='btn' ng-click="editEvent(event)" data-toggle="modal" href="#editModal">Edit</button>
+						<button type='submit' class="btn btn-danger" data-dismiss="modal">Delete</button>
+						<button class="btn btn-primary" type="button"onclick="showV({{friend.id}})">Szczegóły</button>
+					</td>
+					<input type="text" ng-model="filterQuery" placeholder="filter" />
 				</tr>
 			  </table>
 			</div>
