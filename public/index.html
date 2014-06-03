@@ -1,14 +1,16 @@
 ﻿<!DOCTYPE HTML>
 <html ng-app>
   <head>
-    <title>Simple Chat</title>
+    <title>Filmy</title>
     <link rel="stylesheet",type="text/css" href="styles.css"/>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<!--<script src="angular.min.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-	<script src="MojScript.js"></script>
+	<script src="Controler.js"></script>
+	<script>
 	
+	</script>
     <script type="text/javascript" src="chat.js"></script>
 	<script>
 	
@@ -17,22 +19,34 @@
   <body>
 	<div id="demo">siemanko</div>
 	<div  id="tabelka">
-	   <div ng-app="APP" ng-controller="APP.ApplicationCtrl">
-			<table>
+			<div ng-app="APP" ng-controller="APP.ApplicationCtrl">
+			  <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
+			  <hr/>
+			  [ <a href="" ng-click="predicate=''">unsorted</a> ]
+			  <table class="friend">
 				<tr>
-					<th>title</th><th>mileage</th> <th>price</th><th>url</th><th>akcja</th>
+					<th><a href="" ng-click="predicate = 'title'; reverse=false">title</a>
+						  (<a href="" ng-click="predicate = '-title'; reverse=false">^</a>)</th>
+					<th>mileage</th>
+					<th><a href="" ng-click="predicate = 'price'; reverse=!reverse">price</a></th>
+					<th>Url</th>
+					<th>Akcja</th>
 				</tr>
-				<tr id="2" ng-repeat="item in cities">
-					<td>{{item.title}}</td>
-					<td>{{item.mileage}}</td>
-					<td>{{item.price}}</td>
+				<tr ng-repeat="friend in friends | orderBy:predicate:reverse">
+					<td>{{friend.title}}</td>
+					<td>{{friend.mileage}}</td>
+					<td>{{friend.price}}</td>
 					<td>{{item.imgData}}</td>
-					<td><button type="button"onclick="edit("{{item.id}}")>Edytuj</button>
-					<button type="button"onclick="remove("{{item.id}}")>Usuń</button>
-					<button type="button"onclick="show("{{item.id}}")>Szczegóły</button></td>
+					<td>
+						<button type="button"onclick="edit("{{item.id}}")">Edytuj</button>
+						<button type="button"onclick="remove("{{item.id}}")">Usuń</button>
+						<button type="button"onclick="show("{{item.id}}")">Szczegóły</button>
+					</td>
 				</tr>
-			</table>
-		</div>
+			  </table>
+			</div>
+		
+		
 	</div>
     <script type="text/javascript">
       $(document).ready(function() {
