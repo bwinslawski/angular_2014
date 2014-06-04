@@ -1,5 +1,10 @@
 ﻿var dane = 0;
 
+function cancelUser()  {
+		//$( ".edit" ).remove();
+		var pol = document.getElementById('imgData').value;
+	console.log(pol);
+		}
 
 function editV(elo){
 	console.log(elo);
@@ -11,66 +16,24 @@ function editV(elo){
 (function () {
 
 
-
-	function dodajTablice(data)
-	{
-	var elo = ""; 
-	console.log("Jestem tu: " + data);
-		elo =elo+ "<table id=\"tabelka\"><tr> <th>title</th><th>price</th> <th>year</th><th>url</th><th>akcja</th></tr>";
-		$.each( dane, function( key, val ) 
-		{
-				elo = elo +  "<tr><td>"+ val["title"] + "</td><td>" +val["price"]+"</td><td>" +val["year"]+"</td><td>" +val["imgData"]
-				+"</td><td><button type=\"button\"onclick=\"remove("+ val["id"] +")\">Usuń</button>"
-				+"<button type=\"button\"onclick=\"edit("+ val["id"] +")\">Edytuj</button>"
-				+"<button type=\"button\"onclick=\"show("+ val["id"] +")\">Szczegóły</button></td></tr>";
-		});	
-		elo = elo + "</table>";
-		document.getElementById("demo").innerHTML = elo;
-		console.log(elo);
-	}
-
-	function gjoon()
-	{    
-	var lol;
-		if(dane)
-		{
-		document.getElementById("demo").innerHTML = "elo";
-			$.each( dane, function( key, val ) {
-				if (val["title"]=="Give me one reson") 
-				{
-				}
-			});	   
-		}
-		else
-		{
-			$.getJSON( "data.json", function( data ) {
-			dane = data;
-			dodajTablice(dane);
-			});
-			
-			//dodajTablice(dane);
-		}
-		console.log("Questions" + dane);
-		
-	}
-
   window.Chat = {
     socket : null,
   
     initialize : function(socketURL) {
       this.socket = io.connect(socketURL);
 
+	  function send(lol)  {
+		$( ".edit" ).remove();
+		}
       //Send message on button click or enter
       $('#send').click(function() {
-		gjoon();
-		//Chat.send();
+	  Chat.send("save");
+	  
       });
 
-      $('#message').keyup(function(evt) {
+      $('#save').keyup(function(evt) {
         if ((evt.keyCode || evt.which) == 13) {
-          
-		  gjoon();
-         // Chat.send();
+         Chat.send();
 		  return false;
         }
       });
@@ -101,7 +64,31 @@ function editV(elo){
     //Sends a message to the server,
     //then clears it from the textarea
     send : function(data) {
-	console.log("siemanko");
+	if(data=="save"){
+	this.socket.emit('save', {
+        name: data,
+        id: document.getElementById('idU').value,
+		mi: $('.mil').val(),
+		tit: $('.tit').val(),
+		pri: $('.pri').val(),
+		des: $('.des').val(),
+		imgdata: document.getElementById('imgData').value,
+		year: $('.year').val()
+      });
+	}
+	else if(data=="add"){
+	this.socket.emit('add', {
+        name: data,
+        id: document.getElementById('idU').value,
+		mi: $('.mil').val(),
+		tit: $('.tit').val(),
+		pri: $('.pri').val(),
+		des: $('.des').val(),
+		imgdata: document.getElementById('imgData').value,
+		year: $('.year').val()
+      });
+	}
+	else
       this.socket.emit('del', {
         name: data,
         msg: $('#message').val()
@@ -111,5 +98,6 @@ function editV(elo){
 
       return false;
     }
+	
   };
 }());

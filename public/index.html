@@ -11,12 +11,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	<script src="Controler.js"></script>
 	<script>
+	function timedRefreshh()
+	{
+	$( ".edit" ).remove();
+		$( "#lol" ).prepend( " <tr class=\"edit\"><td>mileage<br/><input class=\"mil\" type=\"text\" name=\"fname\" ></td>"
+		+ "<td>title<br/><input class=\"tit\" type=\"text\" name=\"fname\" ></td>"
+		+ "<td>price<br/><input class=\"pri\" type=\"text\" name=\"fname\" ></td>"
+		+"<td rowspan=\"2\">description<br/><textarea class=\"des\" rows=\"3\" ></textarea></td>"
+		+"</tr>" 
+		+" <tr class=\"edit\">"
+		+"<td>URL<br/><input id=\"imgData\" type=\"text\" name=\"fname\" ></td>"
+		+ "<td>year<br/><input class=\"year\" type=\"text\" name=\"fname\" ></td>"
+		+"</tr>");
+		
+	
+	}
 	function timedRefresh()
 	{
 	location.reload()
 	console.log("siemka");
 	}
-	
 	</script>
     <script type="text/javascript" src="chat.js"></script>
 	<script>
@@ -24,12 +38,22 @@
 </script>
   </head>
   <body>
-	<div id="demo"></div>
+	<div id="demo">
+	</div>
 	<div  id="tabelka">
+			<table id="lol">
+			<tr><td  ><a   id="send" class="btn btn-success">Edutuj</a>  </td>
+			<td> <a onclick="cancelUser()" type="button" class="btn btn-danger">Cancel</a></td>
+			<td> <a onclick="timedRefreshh()" type="button" class="btn btn-primary">New</a></td>
+			</tr>
+			</table>
 			<div ng-app="APP" ng-controller="APP.ApplicationCtrl">
 			  
 			  [ <a href="" ng-click="predicate=''">unsorted</a> ]
+			  
 			  <table class="lol">
+			    
+				
 				<tr>
 					<th><a href="" ng-click="predicate = 'title'; reverse=false">title</a>
 						  (<a href="" ng-click="predicate = '-title'; reverse=false">^</a>)</th>
@@ -49,15 +73,17 @@
 						  type="application/x-shockwave-flash">
 					 </embed>
 					</td>
-					<td>
-						<a ng-click="editUser(friend.id)" class="btn btn-small btn-primary">edit</a>
+					<td id="akcja">
+						<a ng-click="editUser(friend)" class="btn btn-small btn-primary">edit</a>
 						<a ng-click="deleteItem(friend.id)" class="btn btn-small btn-danger">delete</a>
 						<a ng-click="showV(friend.id)" class="btn btn-small btn-primary">Szczegóły</a>
+						<a ng-click="additem()" class="btn btn-small btn btn-success">Add</a>
 						<!-- <button role='button' class='btn' ng-click="editEvent(event)" data-toggle="modal" href="#editModal">Edit</button>
 						<button type='submit' class="btn btn-danger" data-dismiss="modal">Delete</button> -->
 						
 					</td>
 					<input type="text" ng-model="filterQuery" placeholder="filter" />
+					
 				</tr>
 			  </table>
 			</div>
