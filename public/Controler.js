@@ -30,6 +30,23 @@ APP.ApplicationCtrl = function ($scope,$http) {
 			
 		}
 		
+		$scope.showV= function (item) {
+		var opis;
+		console.log($scope.friends.length);
+		for (var i = 0; i < $scope.friends.length; i++) {
+					console.log($scope.friends[i]);
+					if($scope.friends[i].id==item){
+					$( "#opisss" ).remove();
+					
+					$( "#demo" ).append( "<div id=\"opisss\"><strong id\"opiss\">Rok produkcji: "+$scope.friends[i].year+ "</strong> <br/><br/><p>" +$scope.friends[i].opis+"</p></div>" );
+					}	
+					}
+		
+		
+		//$( "#demo" ).append( "<strong>Rok produkcji: "+opis+"</strong>" );
+		
+		}
+		
 };
 
 

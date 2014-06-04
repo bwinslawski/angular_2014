@@ -8,6 +8,7 @@
     "title": "Knocking on heavens",
     "year": "2013",
     "imgData": "http://www.youtube.com/v/XGSy3_Czz8k",
+	"opis": "Wielkim sukcesem reżysera oraz scenarzysty Simona Kinberga jest już niewątpliwie sam fakt, że ich konstrukcja nie zapada się pod własnym ciężarem. A filmowcy wykonują tu prawdziwy slalom: łączą płaszczyzny czasowe, mieszają obsady",
     "id": 2
   },
   {
@@ -15,7 +16,8 @@
     "mileage": "Tracy Chapman",
     "price": "20",
     "year": "2014",
-    "imgData": "https://www.youtube.com/v/iNxvE-NvX-A&list=RDiNxvE-NvX-A",
+	"imgData": "https://www.youtube.com/v/iNxvE-NvX-A&list=RDiNxvE-NvX-A",
+    "opis": "Clint Eastwood to już ikona amerykańskiego kina. Aktor, scenarzysta, reżyser, producent i kompozytor w jednym, mimo ukończonych 73 lat, nadal czynnie działa w filmowym światku i co więcej, ciągle z sukcesem. Udowadnia to swoją ostatnią produkcją zatytułowaną ",
     "id": 1
   },
   {
@@ -23,7 +25,8 @@
     "mileage": "Luis Armstrong",
     "price": "150",
     "year": "1968",
-    "imgData": "https://www.youtube.com/v/E2VCwBzGdPM",
+	"imgData":  "https://www.youtube.com/v/E2VCwBzGdPM",
+    "opis": "Gdyby MacFarlane był w formie, Milion sposobów mógłby być inteligentnym szyderstwem z mitu Dzikiego Zachodu: jego bohaterów, legend i tradycji. Niestety, zbyt często można odnieść wrażenie, że reżysera bardziej od westernów inspirował Movie 43",
     "id": 3
   },
   {
@@ -31,7 +34,8 @@
     "mileage": "Ray Charles",
     "price": "100",
     "year": "1961",
-    "imgData": "https://www.youtube.com/v/Q8Tiz6INF7I",
+	"imgData": "https://www.youtube.com/v/Q8Tiz6INF7I",
+    "opis": "O ile film usatysfakcjonuje dzieci, o tyle starszych widzów może rozczarować. Widzowie 16+ nie znajdą tu zbyt wiele dla siebie – Czarownica, mimo potencjału na kategorię R, to ciepła, pozbawiona jakichkolwiek podtekstów, opowieść o istocie prawdziwej miłości.",
     "id": 4
   }
 ]

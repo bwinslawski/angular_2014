@@ -13,7 +13,24 @@ body {
   width : 600px;
   background-color : #0B2126;
 }
+#opiss{
 
+margin-left:10px;
+}
+#demo{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+margin:20px;
+
+
+min-height:200px;
+width: 200px;
+background-color: gray;
+
+
+}
 h1 {
   margin : 0 0 20px 0;
   color : #ededed;

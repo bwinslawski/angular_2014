@@ -8,6 +8,7 @@
     "title": "Knocking on heavens",
     "year": "2013",
     "imgData": "http://www.youtube.com/v/XGSy3_Czz8k",
+	"opis": "Wielkim sukcesem re¿ysera oraz scenarzysty Simona Kinberga jest ju¿ niew¹tpliwie sam fakt, ¿e ich konstrukcja nie zapada siê pod w³asnym ciê¿arem. A filmowcy wykonuj¹ tu prawdziwy slalom: ³¹cz¹ p³aszczyzny czasowe, mieszaj¹ obsady",
     "id": 2
   },
   {
@@ -15,7 +16,8 @@
     "mileage": "Tracy Chapman",
     "price": "20",
     "year": "2014",
-    "imgData": "https://www.youtube.com/v/iNxvE-NvX-A&list=RDiNxvE-NvX-A",
+	"imgData": "https://www.youtube.com/v/iNxvE-NvX-A&list=RDiNxvE-NvX-A",
+    "opis": "Clint Eastwood to ju¿ ikona amerykañskiego kina. Aktor, scenarzysta, re¿yser, producent i kompozytor w jednym, mimo ukoñczonych 73 lat, nadal czynnie dzia³a w filmowym œwiatku i co wiêcej, ci¹gle z sukcesem. Udowadnia to swoj¹ ostatni¹ produkcj¹ zatytu³owan¹ ",
     "id": 1
   },
   {
@@ -23,7 +25,8 @@
     "mileage": "Luis Armstrong",
     "price": "150",
     "year": "1968",
-    "imgData": "https://www.youtube.com/v/E2VCwBzGdPM",
+	"imgData":  "https://www.youtube.com/v/E2VCwBzGdPM",
+    "opis": "Gdyby MacFarlane by³ w formie, Milion sposobów móg³by byæ inteligentnym szyderstwem z mitu Dzikiego Zachodu: jego bohaterów, legend i tradycji. Niestety, zbyt czêsto mo¿na odnieœæ wra¿enie, ¿e re¿ysera bardziej od westernów inspirowa³ Movie 43",
     "id": 3
   },
   {
@@ -31,7 +34,8 @@
     "mileage": "Ray Charles",
     "price": "100",
     "year": "1961",
-    "imgData": "https://www.youtube.com/v/Q8Tiz6INF7I",
+	"imgData": "https://www.youtube.com/v/Q8Tiz6INF7I",
+    "opis": "O ile film usatysfakcjonuje dzieci, o tyle starszych widzów mo¿e rozczarowaæ. Widzowie 16+ nie znajd¹ tu zbyt wiele dla siebie – Czarownica, mimo potencja³u na kategoriê R, to ciep³a, pozbawiona jakichkolwiek podtekstów, opowieœæ o istocie prawdziwej mi³oœci.",
     "id": 4
   }
 ]
